@@ -13,8 +13,8 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        string otherName = collision.gameObject.name;
-        if (otherName == "Damage")
+        string otherTag = collision.gameObject.tag;
+        if (otherTag == "Damage")
         {
             health--;
             Debug.Log(health);
