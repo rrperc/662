@@ -7,6 +7,7 @@ public class ZombieMovement : MonoBehaviour
     public GameObject player;
     public float close = 5.0f;
     public float speed = 3.0f;
+    // Update is called once per frame
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
