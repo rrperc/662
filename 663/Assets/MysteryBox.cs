@@ -9,11 +9,8 @@ public class ItemToSpawn
 }
 
 public class MysteryBox : MonoBehaviour
-
 {
     public ItemToSpawn[] itemToSpawn;
-    // Start is called before the first frame update
-    public ItemToSpawn[] itemToSpawns;
     void Start()
     {
         for (int i = 0; i < itemToSpawn.Length; i++)
@@ -21,12 +18,12 @@ public class MysteryBox : MonoBehaviour
             if (i == 0)
             {
                 itemToSpawn[i].minSpawnProb = 0;
-                itemToSpawn[i].maxSpawnProb = itemToSpawn[i].spawnRate - 1;//60-1 = 59
+                itemToSpawn[i].maxSpawnProb = itemToSpawn[i].spawnRate - 1;
             }
             else
             {
-                itemToSpawn[i].minSpawnProb = itemToSpawn[i - 1].maxSpawnProb + 1;//79+1=80
-                itemToSpawn[i].maxSpawnProb = itemToSpawn[i].minSpawnProb + itemToSpawn[i].spawnRate - 1;//80+10=90-1=89
+                itemToSpawn[i].minSpawnProb = itemToSpawn[i - 1].maxSpawnProb + 1;
+                itemToSpawn[i].maxSpawnProb = itemToSpawn[i].minSpawnProb + itemToSpawn[i].spawnRate - 1;
             }
         }
     }
@@ -42,10 +39,11 @@ public class MysteryBox : MonoBehaviour
     void Spawnner()
     {
         float randomNum = Random.Range(0, 100);//56
-        for(int i = 0; i < itemToSpawn.Length; i++)
+        for (int i = 0; i < itemToSpawn.Length; i++)
         {
             if(randomNum>=itemToSpawn[i].minSpawnProb && randomNum<= itemToSpawn[i].maxSpawnProb)
             {
+                Debug.Log(randomNum + " " + itemToSpawn[i].item.name);
                 Instantiate(itemToSpawn[i].item, transform.position, Quaternion.identity);
                 break;
             }
