@@ -5,8 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Health")]
+    [SerializeField] private float startingHealth
+    public float currentHealth { get; private set; }
+    private Animator anim;
+    private bool dead;
+
+    [Header("iFrames")]
+    [SerializeField] private float iFramesDuration;
+    [SerializeField] private int numberOfFlashes;
+    private SpriteRenderer spriteRend;
     public int health = 3;
-    // Update is called once per frame
+    private void Awake()
+    {
+        currentHealth = startingHealth;
+        anim = GetComponent<Animator>();
+    }
     void Update()
     {
         
