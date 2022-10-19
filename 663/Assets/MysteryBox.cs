@@ -10,6 +10,8 @@ public class ItemToSpawn
 
 public class MysteryBox : MonoBehaviour
 {
+    [SerializeField]private float ItemToSpawn;
+
     public ItemToSpawn[] itemToSpawn;
     void Start()
     {
