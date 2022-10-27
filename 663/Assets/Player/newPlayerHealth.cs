@@ -22,7 +22,7 @@ public class newPlayerHealth : MonoBehaviour
         {
             // We're dead
             //Play Death animation
-            Animation.SetBool("IsDead", true);
+            anim.SetBool("IsDead", true);
             // Show GameOver Screen
         }
     }

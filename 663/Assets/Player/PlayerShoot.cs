@@ -36,7 +36,9 @@ public class PlayerShoot : MonoBehaviour
         {
             var spwnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
             spwnedBullet.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500);
-            GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
+            ammoAmount -= 1;
+            ammo[ammoAmount].gameObject.SetActive(false);
+            //GameObject bullet = Instantiate(prefab, transform.position, Quaternion.identity);
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Vector3 shootDir = mousePosition - transform.position;
@@ -45,5 +47,15 @@ public class PlayerShoot : MonoBehaviour
             Destroy(bullet, bulletLifetime);
             Camera.main.GetComponent<AudioSource>().PlayOneShot(shootSound);
         }
+        if (Input.GetKey(KeyCode.R))
+        {
+            ammoAmount = 8;
+            for (int i = 0; i <= 2; i++)
+            {
+                ammo[i].gameObject.SetActive(true);
+            }
+        }
+
+
     }
 }
