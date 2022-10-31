@@ -6,18 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Main Menu.unity
+    guid: 131178290f4585e4c983d58894dc2e8a
   - enabled: 1
-    path: Assets/Scenes/662.unity
-    guid: 2821cbb18cacf6a408c21eb213cace55
-  - enabled: 1
-    path: Assets/Scenes/662Scrips.unity
-    guid: a3e730f55b6f9ec4fbee0d308233eba7
+    path: Assets/Scenes/Level Select.unity
+    guid: 3e26686d3212e7f4699289240aa88406
   - enabled: 1
     path: Assets/Scenes/Tri Tec.unity
     guid: 438c46a7cbe7c6649b298b4beff68d60
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 131178290f4585e4c983d58894dc2e8a
+    path: Assets/Scenes/Basement.unity
+    guid: f0f534b248a0b8c4dbd651f72e59c39a
+  - enabled: 1
+    path: Assets/Scenes/Army Base.unity
+    guid: 39f27881883aee74cb2f007ca45cd20a
   m_configObjects: {}
